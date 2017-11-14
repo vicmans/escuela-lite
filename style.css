@@ -24,10 +24,9 @@ body {
     padding: 0;
     -ms-word-wrap: break-word;
     word-wrap: break-word;
-    background-color: #fff;
     font: 15px/22px 'PT Sans';
     color: #7c7b79;
-	background-color:#f1f1f1;
+    background-color: #fefefe;
 }
 img {
     margin: 0;

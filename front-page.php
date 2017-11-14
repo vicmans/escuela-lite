@@ -108,7 +108,7 @@ get_header();
                 endif;
                 ?>
             </div>
-            <?php get_sidebar();?>
+            <?php #get_sidebar();?>
             <div class="clear"></div>
         </div>
     </div>
