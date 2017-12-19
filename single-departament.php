@@ -15,7 +15,7 @@ get_header();
   <div class="main-container">
     <div class="content-area">
         <div class="middle-align content_sidebar">
-            <div class="site-main" id="sitemain">
+            <div id="sitemain">
 				<?php
                 if ( have_posts() ) :
                     // Start the Loop.
@@ -38,7 +38,6 @@ get_header();
                 endif;
                 ?>
             </div>
-            <?php get_sidebar();?>
             <div class="clear"></div>
         </div>
     </div>

@@ -62,9 +62,13 @@
                 <a href="/paste/index.php/profesor/<?php echo $child_post->post_name; ?>"><img src="<?php echo $child_post->fields['fotoprofesor']; ?>" width="150px"></a>
         </div> -->
         
-  <div class="col-sm-6 col-md-4">
+  <div class="col-sm-4 col-md-3">
     <div class="thumbnail">
-      <img src="<?php echo $child_post->fields['fotoprofesor']; ?>">
+      <div class="thumbnail" style="background-image: url(<?php echo $child_post->fields['fotoprofesor']; ?>);width: 100%; height: 200px;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        "></div>
+      <!-- <img src="<?php echo $child_post->fields['fotoprofesor']; ?>"> -->
       <div class="caption">
         <h3><?php echo $child_post->post_title; ?></h3>
         <p>Aqui deberiamos escribir algo</p>
@@ -75,8 +79,8 @@
 
         <?php } ?>
    </div>
-    <footer class="entry-meta">
+   <footer class="entry-meta">
         <?php edit_post_link( __( 'Edit', 'campus-lite' ), '<span class="edit-link">', '</span>' ); ?>
-    </footer><!-- .entry-meta -->
+   </footer><!-- .entry-meta -->
 
 </article>

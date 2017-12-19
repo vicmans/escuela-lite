@@ -6,19 +6,19 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
     
-<div class="container">
+<div class="container-fliud">
     <header class="entry-header">
         <h1 class="entry-title"><?php the_title(); ?></h1>
     </header><!-- .entry-header -->
     <div class="row entry-content">
-     <div class="col-sm-6">
+     <div class="col-sm-4">
         <a href="#" class="thumbnail">
         <?php echo types_render_field( "fotoprofesor" ); ?>
         </a>
 
      </div>
      <!-- INformacion del profsor -->
-     <div class="col-sm-6">
+     <div class="col-sm-8">
         <?php 
                 $writer_id = wpcf_pr_post_get_belongs( get_the_ID(), 'departament' );
                 $writer_post = get_post( $writer_id );
@@ -29,11 +29,13 @@
          <p><strong>Correo: <?php echo types_render_field( "correo" ); ?></strong></p>
         <p><strong>Site: <?php echo types_render_field( "sitio-web-profesor" ); ?></strong></p>
         <p><strong>Telefono: <?php echo types_render_field( "telefono" ); ?></strong></p>
-        <p><strong>Facebook: <?php echo types_render_field( "facebook" ); ?></strong></p>
+        <p><strong><?php echo (count(types_render_field( "facebook" ))>0) ? "Facebook: ".types_render_field( "facebook" ) : "" ; ?></strong></p>
         <p><strong>Twitter: <?php echo types_render_field( "twitter" ); ?></strong></p>
         </div>
-        </div>
+    </div>
+    <!-- Fin INformacion del profsor -->
         <div class="clear"></div>
+
     <div class="row">
 
     <div class="col-sm-12">
@@ -60,14 +62,17 @@ foreach ($child_posts as $child_post) {
     </div>
 
         <br>
+        <?php if(the_content()){ ?>
         <h3>Cartelera informativa</h3>
         <div class="col-sm-12 text-center">
             <?php the_content(); ?>
         </div>
+        <?php } ?>
 
-        </div><!-- .entry-content -->
-        </div>
     </div>
+    </div>
+    </div>
+
     <footer class="entry-meta">
         <?php edit_post_link( __( 'Edit', 'campus-lite' ), '<span class="edit-link">', '</span>' ); ?>
     </footer><!-- .entry-meta -->
