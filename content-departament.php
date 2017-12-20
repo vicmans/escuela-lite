@@ -64,7 +64,7 @@
         
   <div class="col-sm-4 col-md-3">
     <div class="thumbnail">
-      <div class="thumbnail" style="background-image: url(<?php echo $child_post->fields['fotoprofesor']; ?>);width: 100%; height: 200px;
+      <div class="thumbnail" style="background-image: url(<?php echo $child_post->fields['fotoprofesor']; ?>);width: 100%; padding-top: 100%;
         background-size: 100%;
         background-repeat: no-repeat;
         "></div>
