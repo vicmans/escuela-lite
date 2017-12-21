@@ -72,7 +72,7 @@
       <div class="caption">
         <h3><?php echo $child_post->post_title; ?></h3>
         <p>Aqui deberiamos escribir algo</p>
-        <p><a href="/paste/index.php/profesor/<?php echo $child_post->post_name; ?>" class="btn btn-primary" role="button">Ver Perfil</a></p>
+        <p><a href="<?php echo get_permalink($child_post->ID); ?>" class="btn btn-primary" role="button">Ver Perfil</a></p>
       </div>
     </div>
   </div>
