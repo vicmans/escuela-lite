@@ -71,7 +71,7 @@ get_header();
                           		 <div class="thumbbx"><?php if(has_post_thumbnail()) { ?><?php the_post_thumbnail(); ?><?php } ?></div>
 						<div class="fourbxcontent">
 							<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>				
-								<p><?php the_excerpt(); ?></p>
+								<p><?php echo substr(get_the_excerpt(), 0, 150).' ...'; ?></p>
 								<a class="pagemore" href="<?php the_permalink(); ?>"><?php _e('Read More','campus-lite'); ?></a>				
 						</div>
                 </div> 
