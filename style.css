@@ -260,8 +260,9 @@ a.button{
     font-weight: 700;
     text-transform: Uppercase;
     padding: 0;
-    margin-bottom: 8px;
+    margin-bottom:1px;
     font-size: 32px;
+
 }
 .header .header-inner .logo a {
     font-family: 'Karla', sans-serif;
@@ -270,6 +271,7 @@ a.button{
     font-size: 14px;
     font-family: 'PT Sans';
     color: #0e2d45;
+    margin-bottom: 4px
 }
 .toggle {
     display: none;
@@ -424,7 +426,7 @@ a.pagemore {
 .content-area {
     width: 1160px;
     margin: 0 auto;
-    padding: 50px 0;
+    padding: 0;
 }
 .site-main {
     width: 800px;
@@ -558,6 +560,7 @@ h1.entry-title,
 h1.page-title {
     padding-bottom: 20px;
     font-size: 30px;
+    padding:0px
 }
 article.tag-sticky-2 {
     background: #f6f6f6;
@@ -744,4 +747,27 @@ ul.errormsg li {
 }
 footer.entry-meta {
     clear: left;
+}
+aside.widget {
+    margin-bottom: 30px;
+    color: #004b71;;
+     background-color: rgba(229,229,229,0.7) ;
+}
+.header{
+    padding:5px;    
+}
+.content-area{
+    padding:0px;
+
+}
+
+.header-inner{
+    line-height:10px;
+}
+.header .header-inner .logo h1{
+    margin-bottom:1px;
+    
+}
+.header .header-inner .logo p{
+    margin-bottom:4px;
 }
