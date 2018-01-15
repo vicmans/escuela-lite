@@ -748,6 +748,13 @@ ul.errormsg li {
 footer.entry-meta {
     clear: left;
 }
+
+#pagearea{
+    padding: 0;
+    margin-top:50px
+}
+
+/*Nuevo que agrego joel*/
 aside.widget {
     margin-bottom: 30px;
     color: #004b71;;
