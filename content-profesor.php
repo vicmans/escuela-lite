@@ -7,9 +7,7 @@
 
     
 <div class="container-fliud">
-    <header class="entry-header">
-        <h1 class="entry-title"><?php the_title(); ?></h1>
-    </header><!-- .entry-header -->
+    <!-- .entry-header -->
     <div class="row entry-content">
      <div class="col-sm-4">
         <a href="#" class="thumbnail">
@@ -19,30 +17,40 @@
      </div>
      <!-- INformacion del profsor -->
      <div class="col-sm-8">
+        <header class="entry-header">
+            <h1 class="entry-title"><?php the_title(); ?></h1>
+        </header>
         <?php 
                 $writer_id = wpcf_pr_post_get_belongs( get_the_ID(), 'departament' );
-                $writer_post = get_post( $writer_id );
-                $writer_name = $writer_post->post_title;
+
+                if ($writer_id != 0) {
+                    $writer_post = get_post( $writer_id );
+                    $writer_name = $writer_post->post_title;
                 ?>
                 <p>Departamento al que pertenece: <a href="<?php echo get_permalink($writer_post); ?>"><?php echo $writer_name; ?></a></p>
+                <?php } ?>
 
-         <p><strong>Correo: <?php echo types_render_field( "correo" ); ?></strong></p>
-        <p><strong>Site: <?php echo types_render_field( "sitio-web-profesor" ); ?></strong></p>
-        <p><strong>Telefono: <?php echo types_render_field( "telefono" ); ?></strong></p>
-        <p><strong><?php echo (count(types_render_field( "facebook" ))>0) ? "Facebook: ".types_render_field( "facebook" ) : "" ; ?></strong></p>
-        <p><strong>Twitter: <?php echo types_render_field( "twitter" ); ?></strong></p>
+         <p><strong><?php imprimir_si_tiene('Correo',types_render_field( "correo" )) ?></strong></p>
+        <p><strong><?php imprimir_si_tiene('Sitio Web',types_render_field( "sitio-web-profesor" )); ?></strong></p>
+        <p><strong><?php imprimir_si_tiene('Telefono',types_render_field( "telefono" )); ?></strong></p>
+        <p><strong><?php imprimir_si_tiene('Facebook',types_render_field( "facebook" )); ?></strong></p>
+        <p><strong><?php imprimir_si_tiene('Twitter',types_render_field( "twitter" )); ?></strong></p>
         </div>
     </div>
     <!-- Fin INformacion del profsor -->
         <div class="clear"></div>
-
+<?php $child_posts = types_child_posts('materia');
+    if (count($child_posts)>0) {
+        # code...
+    
+ ?>
     <div class="row">
 
     <div class="col-sm-12">
         <h3>Asignaturas que Dicta</h3>
 
         <div class="col-sm-12">
-    <?php 
+    <?php }
     //It will query all child posts of the current event, that are appearance type
 $child_posts = types_child_posts('materia');
 

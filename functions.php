@@ -155,6 +155,16 @@ function campus_lite_front_page_template( $template ) {
 }
 add_filter( 'frontpage_template',  'campus_lite_front_page_template' );
 
+/**
+ * Para saber si tiene o no este campo agregado
+ * @param  string $imp lo que se imprime antes del campo
+ * @param  string $slug el campo a imprimir
+ * 
+ */
+function imprimir_si_tiene($imp,$slug){
+	$prin = (strlen($slug)>0) ? "$imp: $slug" : "" ;
+	echo $prin;
+}
 
 /**
  * Implement the Custom Header feature.

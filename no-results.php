@@ -11,7 +11,7 @@
 
 	
         <header>
-            <h1 class="entry-title"><?php _e( 'Nothing Found', 'campus-lite' ); ?></h1>
+            <h1 class="entry-title"><?php _e( 'No se encontraron resultados', 'campus-lite' ); ?></h1>
         </header>
 
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
@@ -25,7 +25,7 @@
 
 		<?php else : ?>
 
-			<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'campus-lite' ); ?></p><br />
+			<p><?php _e( 'No podemos encontrar lo que estas buscando. Quizas la busqueda pueda ayudar.', 'campus-lite' ); ?></p><br />
 			<?php get_search_form(); ?>
 
 		<?php endif; ?>
