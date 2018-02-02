@@ -32,9 +32,11 @@
             <div class="post-tags"><?php the_tags(__(' | Tags: ','campus-lite'), ', ', '<br />'); ?> </div>
             <div class="clear"></div>
         </div><!-- postmeta -->
+<?php
+        if (count($child_posts)>0) { ?>
     <h3>Asignaturas de este departamento</h3>
 
-            <?php 
+            <?php }
                 $child_posts = types_child_posts("asignatura");
                 foreach ($child_posts as $child_post) 
                 { ?>
@@ -44,15 +46,17 @@
                     </div>
                  
                  
-                <?php } ?>
-
-    <h3>Profesores de este departamento</h3>
-   <div class="row">
-    <?php
+                <?php } 
     // Obtengo a los profesores
         $child_posts = types_child_posts("profesor");
-
     // para mostrar los posts hijos de departamentos
+ if (count($child_posts)>0) { ?>
+
+    <h3>Profesores de este departamento</h3>
+            <div class="row">
+    
+<?php }
+        
 
         foreach ($child_posts as $child_post) 
         { ?>

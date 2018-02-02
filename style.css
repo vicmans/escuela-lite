@@ -758,14 +758,14 @@ footer.entry-meta {
 aside.widget {
     margin-bottom: 30px;
     color: #004b71;;
-     background-color: rgba(229,229,229,0.7) ;
+    
 }
 .header{
     padding:5px;    
 }
 .content-area{
     padding:0px;
-
+    margin-top: 10px
 }
 
 .header-inner{
