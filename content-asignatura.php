@@ -20,24 +20,38 @@
         <?php #the_content(); ?>
 <?php 
 $writer_id = wpcf_pr_post_get_belongs( get_the_ID(), 'departament' );
+if ($writer_id) {
+    # code...
 $writer_post = get_post( $writer_id );
 $writer_name = $writer_post->post_title;
 ?>
 <p>Departamento al que pertenece: <a href="<?php echo get_permalink($writer_post); ?>"><?php echo $writer_name; ?></a></p>
 
-<p><strong>Codigo: <?php echo types_render_field( "codigo" );  // Call to Types function for rendering a custom field "Consultant Roles" ?></strong></p>
-            <p><strong>UC: <?php echo types_render_field( "unidades-de-credito" );  // Call to Types function for rendering a custom field "Consultant Roles" ?></strong></p>
-            <p><strong>Justificacion:</strong></p><p>
-            <?php echo types_render_field( "justificacion" );  // Call to Types function for rendering a custom field "Consultant Roles" ?></p>
-            <p><strong>Objetivo:</strong></p><p>
-            <?php echo types_render_field( "objetivo" ); ?></p>
+<?php } ?>
 
+    <?php if (types_render_field( "codigo" )): ?>
+    <p><strong>Codigo: <?php echo types_render_field( "codigo" );  // Call to Types function for rendering a custom field "Consultant Roles" ?></strong></p>
+    <?php endif ?>
+
+    <?php if (types_render_field( "unidades-de-credito" )): ?>
+        <p><strong>UC: <?php echo types_render_field( "unidades-de-credito" );  // Call to Types function for rendering a custom field "Consultant Roles" ?></strong></p>
+    <?php endif ?>
+            <?php if (types_render_field( "justificacion" )): ?>
+            <p><strong>Justificacion:</strong></p><p>
+            <?php echo types_render_field( "justificacion" ); ?></p>
+            <?php endif ?>
+            <?php if(types_render_field( "objetivo" )): ?>
+                <p><strong>Objetivo:</strong></p><p>
+                <?php echo types_render_field( "objetivo" ); ?></p>
+            <?php endif ?>
+            <?php if(types_render_field( "contenido" )): ?>
             <h2>Contenido</h2>
+            
             <div>
                 
                 <?php echo types_render_field( "contenido" ); ?>
             </div>
-
+            <?php endif; ?>
         </div><!-- .entry-content --><div class="clear"></div>
         <?php
         wp_link_pages( array(
@@ -51,10 +65,13 @@ $writer_name = $writer_post->post_title;
             <div class="post-tags"><?php the_tags(__(' | Tags: ','campus-lite'), ', ', '<br />'); ?> </div>
             <div class="clear"></div>
         </div><!-- postmeta -->
+        <?php $child_posts = types_child_posts('materia'); ?>
+        <?php if ($child_posts): ?>
+            
     <h3>Profesores que Dicta</h3>
     <?php 
     //It will query all child posts of the current event, that are appearance type
-$child_posts = types_child_posts('materia');
+
 foreach ($child_posts as $child_post) {
     $band_id = wpcf_pr_post_get_belongs($child_post->ID, 'profesor');
  
@@ -64,10 +81,11 @@ foreach ($child_posts as $child_post) {
 
     $band = get_post($band_id);
     ?>
-    <a href="<?php echo get_permalink($band->ID); ?>"><?php echo $band->post_title; ?>   </a>
+    <a href="<?php echo get_permalink($band->ID); ?>"><?php echo $band->post_title; ?>   </a><br>
     <?php
 }
     ?>
+        <?php endif ?>
    
     <footer class="entry-meta">
         <?php edit_post_link( __( 'Edit', 'campus-lite' ), '<span class="edit-link">', '</span>' ); ?>

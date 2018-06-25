@@ -33,11 +33,12 @@
             <div class="clear"></div>
         </div><!-- postmeta -->
 <?php
-        if (count($child_posts)>0) { ?>
+    $child_posts = types_child_posts("asignatura");
+    if (count($child_posts)>0) { ?>
     <h3>Asignaturas de este departamento</h3>
 
             <?php }
-                $child_posts = types_child_posts("asignatura");
+                
                 foreach ($child_posts as $child_post) 
                 { ?>
                          
@@ -46,9 +47,9 @@
                     </div>
                  
                  
-                <?php } 
+                <?php }
     // Obtengo a los profesores
-        $child_posts = types_child_posts("profesor");
+    $child_posts = types_child_posts("profesor");
     // para mostrar los posts hijos de departamentos
  if (count($child_posts)>0) { ?>
 
