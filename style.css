@@ -302,7 +302,7 @@ a.button{
     display: block;
 }
 .header .header-inner .nav ul li a:hover {
-    color: #e04622;
+    color: #000086;
 }
 @media screen and (min-width: 1000px) {
     .header .header-inner .nav ul li ul {
@@ -383,13 +383,13 @@ section#pagearea {
     position: absolute;
     width: 70px;
     height: 2px;
-    background-color: #e04622;
+    background-color: #000086;
     bottom: 0;
     left: 0;
     right: 0;
 }
 .fourbox:hover h3 {
-    color: #e04622;
+    color: #000086;
 }
 a.pagemore {
     border: 1px solid #1b265c;
@@ -417,8 +417,8 @@ a.pagemore {
 }
 .fourbox:hover .pagemore {
     color: #ffffff;
-    background-color: #e04622;
-    border: 1px solid #e04622;
+    background-color: #000086;
+    border: 1px solid #000086;
 }
 
 /* --------- Pages ------- */
