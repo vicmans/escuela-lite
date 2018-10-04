@@ -48,7 +48,6 @@ $writer_name = $writer_post->post_title;
             <h2>Contenido</h2>
             
             <div>
-                
                 <?php echo types_render_field( "contenido" ); ?>
             </div>
             <?php endif; ?>
@@ -68,7 +67,7 @@ $writer_name = $writer_post->post_title;
         <?php $child_posts = types_child_posts('materia'); ?>
         <?php if ($child_posts): ?>
             
-    <h3>Profesores que Dicta</h3>
+    <h3>Profesores que Dictan esta asignatura</h3>
     <?php 
     //It will query all child posts of the current event, that are appearance type
 
@@ -81,7 +80,7 @@ foreach ($child_posts as $child_post) {
 
     $band = get_post($band_id);
     ?>
-    <a href="<?php echo get_permalink($band->ID); ?>"><?php echo $band->post_title; ?>   </a><br>
+    <a href="<?php echo get_permalink($band->ID); ?>"><?php echo $band->post_title; ?> </a><br>
     <?php
 }
     ?>
