@@ -76,7 +76,6 @@
       <!-- <img src="<?php echo $child_post->fields['fotoprofesor']; ?>"> -->
       <div class="caption">
         <h3><?php echo $child_post->post_title; ?></h3>
-        <p>Aqui deberiamos escribir algo</p>
         <p><a href="<?php echo get_permalink($child_post->ID); ?>" class="btn btn-primary" role="button">Ver Perfil</a></p>
       </div>
     </div>
