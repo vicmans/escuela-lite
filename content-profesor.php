@@ -63,10 +63,14 @@ foreach ($child_posts as $child_post) {
  
     $band = get_post($band_id);
     ?>
+    <?php if ($band->post_type!='profesor'): ?>
+        
     <a href="<?php echo get_permalink($band->ID); ?>"><?php echo $band->post_title; ?>   </a><br>
+    <?php endif ?>
     <?php
 }
     ?>
+    <br>
     </div>
 
         <br>

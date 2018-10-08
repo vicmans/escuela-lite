@@ -73,19 +73,22 @@ $writer_name = $writer_post->post_title;
 
 foreach ($child_posts as $child_post) {
     $band_id = wpcf_pr_post_get_belongs($child_post->ID, 'profesor');
- 
     //You can also use WP Native API get_post_meta to get the parent post ID
     //as it is stored in a hidden custom field _wpcf_belongs_post-type-slug_id
     //$band_id = get_post_meta($child_post->ID, '_wpcf_belongs_band_id', true);
 
     $band = get_post($band_id);
+    
+
     ?>
+    <?php if ($band->post_type!='asignatura'): ?>
     <a href="<?php echo get_permalink($band->ID); ?>"><?php echo $band->post_title; ?> </a><br>
+    <?php endif ?>
     <?php
 }
     ?>
         <?php endif ?>
-   
+   <br>
     <footer class="entry-meta">
         <?php edit_post_link( __( 'Edit', 'campus-lite' ), '<span class="edit-link">', '</span>' ); ?>
     </footer><!-- .entry-meta -->
